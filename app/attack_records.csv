@@ -1,0 +1,2 @@
+attack_type,user_role,location,attack_ip,target_ip,outcome,data_compromised_GB,attack_duration_min,Security_tools_used,target_system,attack_severity,timestamp,industry,response_time_min,mitigation_method,month,year,time
+Cross-Site Scripting,External User,Nigeria,142.250.179.67,192.168.143.154,Success,2.0,10,"Endpoint Detection, VPN",IoT Device,5,2025-03-28 12:38:19.457420,Finance,20,Containment,March,2025,12:38:19.514329
