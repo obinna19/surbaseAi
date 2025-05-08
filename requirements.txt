@@ -1,6 +1,6 @@
 pandas==2.2.3
 requests==2.32.3
-streamlit==1.36.0
+streamlit==1.41.1
 rich==13.9.4
 mysql-connector-python==9.2.0
 pillow==11.1.0
