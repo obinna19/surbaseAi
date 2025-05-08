@@ -131,11 +131,6 @@ def main():
         #st.markdown("<div style='text-align: center; color: white;'> Youhave succeefully logged in</div>", 
                     #unsafe_allow_html=True)
         
-        if st.form_submit_button("Logout"):
-            
-            st.session_state.authenticated = False
-            st.switch_page('login_app.py')
-            st.rerun()
 
     
 
