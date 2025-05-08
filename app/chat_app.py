@@ -7,6 +7,7 @@ from streamlit_autorefresh import st_autorefresh
 
 # set page configuration
 #st.set_page_config(page_title="Group Chat", layout="wide")
+st.title('CHAT FORUM')
 
 # Auto-refresh every 2 secs
 st_autorefresh(interval=2000, key="chat_refresh")
