@@ -3,11 +3,15 @@ import streamlit as st
 import os
 import subprocess
 import webbrowser
-import login_app
+from login_app import *
 
 
 #st.title("Cybercrime Report Monitor🎡")
-
+st.set_page_config(
+    page_title= 'SurbaseAi',
+    page_icon= '©',
+    layout= "wide"
+)
 #st.logo()
 about_page = st.Page(
     "./app/about.py", 
