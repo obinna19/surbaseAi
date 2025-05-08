@@ -5,6 +5,7 @@ from typing import Optional
 
 # Set page title and icon
 #st.set_page_config(page_title="AI Chatbot", page_icon="🎱")
+st.title('SurbaseAI')
 
 # API endpoints
 API_ENDPOINTS = {
