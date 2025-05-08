@@ -13,7 +13,7 @@ st.markdown("Enter an IP address to display its geographical location on the map
 ip_address = st.text_input("Enter IP Address:", placeholder="")
 
 # Add your ipinfo.io API token here
-API_TOKEN = "34e55b3fff37de"
+API_TOKEN = st.secrets["api_key"]
 
 if st.button("Locate IP"):
     if not ip_address:
@@ -68,7 +68,7 @@ st.markdown("""
     ---
     **Note:**
     1. Get a free API token from [ipinfo.io](https://ipinfo.io/)
-    2. Replace 'YOUR_API_TOKEN' in the code with your actual token
+    2. Replace 'YOUR_API_TOKEN' in the code with your actual secret api_key token
     3. Free tier allows 50000 requests/month
 """)
 
