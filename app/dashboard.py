@@ -93,7 +93,7 @@ with row_metrics[1]:
         st.metric(
             "Total Success Attack", 
             success_attack,
-            delta=f"{percen_rating/100:.2f} % Loss",
+            delta=f"{percen_rating/aver_data:.2f} % Loss of Data",
              help="% failed attack",
         )
 
