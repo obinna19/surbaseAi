@@ -1,7 +1,7 @@
 pandas==2.2.2
 requests==2.32.3
 streamlit==1.36.0
-rich<14
+rich<14,>=10.14.0,
 sqlite3
 base64
 json
