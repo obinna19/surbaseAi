@@ -1,0 +1,29 @@
+[project]
+name = "surbaseai"
+version = "0.1.0"
+description = "Forensic Toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "folium>=0.19.5",
+    "geopy>=2.4.1",
+    "matplotlib>=3.9.4",
+    "mysql-connector-python==9.2.0",
+    "openai==1.72.0",
+    "optional>=0.0.1",
+    "pandas==2.2.2",
+    "plotly>=6.0.1",
+    "pydiscourse==1.7.0",
+    "requests==2.32.3",
+    "seaborn>=0.13.2",
+    "streamlit==1.41.1",
+    "streamlit-autorefresh>=1.0.1",
+    "streamlit-folium==0.24.0",
+    "suricata-update==1.3.3",
+    "websocket-client==1.8.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "commit",
+]
