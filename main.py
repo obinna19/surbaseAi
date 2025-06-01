@@ -91,7 +91,8 @@ if st.sidebar.button("logout"):
 
     st.session_state.authenticated = False
     try: 
-        st.switch_page("login_app.py")
+        st.link_button("Go to Other App", "https://surbaseai.streamlit.app/")
+        #st.switch_page("login_app.py")
         st.rerun()
     except:
         pass
