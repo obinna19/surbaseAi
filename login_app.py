@@ -125,11 +125,13 @@ def main():
 
     else:
         st.success("Already authenticated. Main app should be running.")
+        st.markdown("[Open Other App](https://surbaseai-main.streamlit.app/)")
         # display after successful login
-        #st.markdown("<h1 style='text-align: center; color: white;'>Welcome!</h1>", 
-                    #unsafe_allow_html=True)
-        #st.markdown("<div style='text-align: center; color: white;'> Youhave succeefully logged in</div>", 
-                    #unsafe_allow_html=True)
+        
+        st.markdown("<h1 style='text-align: center; color: white;'>Welcome!</h1>", 
+                    unsafe_allow_html=True)
+        st.markdown("<div style='text-align: center; color: white;'> Youhave succeefully logged in</div>", 
+                    unsafe_allow_html=True)
         
 
     
