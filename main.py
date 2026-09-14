@@ -92,7 +92,7 @@ if st.sidebar.button("logout"):
     st.session_state.authenticated = True
     try: 
         #st.switch_page("login_app.py")
-         st.link_button(
+        st.link_button(
             "🚀 Logout SurbaseAI",
             "https://surbaseai.streamlit.app/"
         )
