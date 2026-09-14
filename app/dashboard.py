@@ -2,18 +2,20 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 from datetime import date
+import matplotlib.pyplot as plt
+import seaborn as sns
 #import geopy.geocoders import Nominatim
 #from streamlit_folium import folium_static
 
 
 ###############################################3######################
-####### LOAD DATA
+####### LOAD DATA ./app/Cybercrime_data.csv
 #####################################################################
 YEAR = 2023
 
 @st.cache_data(max_entries=5)
 def load_data():
-    data = pd.read_csv('./app/Cybercrime_data.csv')
+    data = pd.read_csv("./app/Cybercrime_data.csv")
     return data
 
 df = load_data()
@@ -63,18 +65,6 @@ percen_rating = round(total_outcome - success_attack) / 100
 aver_data = round(df['data_compromised_GB'].mean(), 2)
 
 
-
-count_outcome = df.groupby(by=["target_system", "attack_type"] )[["attack_severity"]].sum().reset_index().sort_values(by="attack_severity")
-#st.write(count_outcome)
-st.subheader("Attack Level")
-st.line_chart(
-    count_outcome, 
-    x ="target_system",
-    y ="attack_type",
-    color = ["#ffaa00"] 
-)
-
-
 st.subheader("Table Summary")
 row_metrics = st.columns(2)
 
@@ -96,6 +86,67 @@ with row_metrics[1]:
             delta=f"{percen_rating/aver_data:.2f} % Loss of Data",
              help="% failed attack",
         )
+
+
+
+count_outcome = df.groupby(by=["target_system", "attack_type"] )[["attack_severity"]].sum().reset_index().sort_values(by="attack_severity")
+#st.write(count_outcome)
+st.subheader("Attack Level")
+
+col1, col2 = st.columns(2)
+with col1:
+    st.write("frequency distribution")
+    fig, ax = plt.subplots()
+    count_outcome.plot(kind='line', ax=ax, color='#00FF00')
+    plt.xlabel("target_system")
+    plt.ylabel("attack_type")
+    st.pyplot(fig)
+
+with col2:
+    st.write("Feature Correlation")
+    numeric_df = df.select_dtypes(include=['number'])
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm', ax=ax)
+    st.pyplot(fig)
+
+st.subheader("Preventive Measures")
+tab1, tab2, tab3 = st.columns(3)
+with tab1:
+    st.write("**Mitigation method**")
+    mit_counts = df['mitigation_method'].value_counts()
+    fig, ax = plt.subplots()
+    mit_counts.plot(kind='line', ax=ax, color='#00FF00')
+    plt.xlabel("mitigation_method")
+    plt.ylabel("Attack levels")
+    st.pyplot(fig)
+
+with tab2:
+    st.write("**Data Compromised**")
+    Data_counts = df['data_compromised_GB']
+    fig, ax = plt.subplots()
+    Data_counts.plot(kind='line', ax=ax, color='#00FF00')
+    plt.xlabel("data_compromised_GB")
+    plt.ylabel("target Levels")
+    st.pyplot(fig)
+
+with tab3:
+    
+    st.write("**Security Tools**")
+    security_counts = df['security_tools_used'].value_counts()
+    fig, ax = plt.subplots()
+    security_counts.plot(kind='line', ax=ax, color='#00FF00')
+    plt.xlabel("security_tools_used")
+    plt.ylabel("Mitigation levels")
+    st.pyplot(fig)
+
+#st.line_chart(
+    #count_outcome, 
+    #x ="target_system",
+    #y ="attack_type",
+    #color = ["#ffaa00"] 
+#)
+
+
 
 fig_outcome = px.bar(
     count_outcome,

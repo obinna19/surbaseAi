@@ -136,11 +136,11 @@ def suricata_ids():
     st.title("IDS/IPS Monitor")
     st.write("Suricata Integration Demo")
 
-    if st.form_submit_button("Start Suricata"):
+    if st.form_submit_button("Start Suricata"): 
         import subprocess
-        result = subprocess.run(["suricata", "-c", "/etc/suricata/suricata.yaml", "-i", "eth0"],
+        result = subprocess.Popen(["suricata", "-c", "/etc/suricata/suricata.yaml", "-i", "eth0"],
                             capture_output=True, text=True)
-        st.text(result.stdout)
+        st.text(result.stdout)  
 
     uploaded_file = st.file_uploader("Upload PCAP file")
     if uploaded_file:
@@ -176,6 +176,5 @@ with st.form("cyber"):
     except Exception as e:
             app.rerun()
 
-if __name__ == "__main__": 
-    app.run()
+
 
