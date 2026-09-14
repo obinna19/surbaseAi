@@ -7,6 +7,7 @@
 import os
 import streamlit as st
 import google.generativeai as genai
+from google import genai
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -15,7 +16,7 @@ load_dotenv(override=True)
 
 
 # Configure Gemini API
-genai.configure(api_key=os.getenv("Api_key"))
+genai.Client(api_key=st.secrets["Api_key"])  #configure(api_key=os.getenv("Api_key")
 
 # Model configuration
 generation_config = {
