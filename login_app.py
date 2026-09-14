@@ -8,11 +8,7 @@ import main
 
 #image_path = "C:\Users\Martin Amilo\c\gui\project\image\jpg\scenery.jpg"
 
-st.set_page_config(
-    page_title='Login Page',
-     page_icon='©', 
-     layout="wide"
-)
+
 
 # Database function ---
 def init_db():
@@ -84,7 +80,7 @@ def main():
         max-width: 400px;    
     }     
     .stTextInput>div>div>input, .stTextInput>div>div>input:focus {
-        background-color: rgba(255, 255, 255, 0.9);            
+        background-color: #2E2E2E;            
     }
     </style>
 
@@ -93,7 +89,7 @@ def main():
     # check authentication status
     if 'authenticated' not in st.session_state:
         st.session_state.authenticated = False
-
+        
     if not st.session_state.authenticated: 
         # login form
         with st.container():
@@ -120,18 +116,19 @@ def main():
                         st.rerun()
                     else:
                         st.error("Invalid username or password")
+                    
+                    
 
             st.markdown('</div>', unsafe_allow_html=True)
 
     else:
         st.success("Already authenticated. Main app should be running.")
-        st.markdown("[Open Other App](https://surbaseai-main.streamlit.app/)")
         # display after successful login
+        #st.markdown("<h1 style='text-align: center; color: white;'>Welcome!</h1>", 
+                    #unsafe_allow_html=True)
+        #st.markdown("<div style='text-align: center; color: white;'> Youhave succeefully logged in</div>", 
+                    #unsafe_allow_html=True)
         
-        st.markdown("<h1 style='text-align: center; color: white;'>Welcome!</h1>", 
-                    unsafe_allow_html=True)
-        st.markdown("<div style='text-align: center; color: white;'> Youhave succeefully logged in</div>", 
-                    unsafe_allow_html=True)
         
 
     
