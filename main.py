@@ -50,7 +50,7 @@ messenger_page = st.Page(
     
 )
 AI_page = st.Page(
-    "./app/chatAi.py", 
+    "./app/chatbot.py", 
     title="AI Assistant", 
     icon="🎯",
     
