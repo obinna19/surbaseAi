@@ -108,7 +108,7 @@ def main():
                         st.session_state['username'] = username
 
                         try:
-                            subprocess.Popen(['streamlit', 'run', 'main.py'])
+                            #subprocess.Popen(['streamlit', 'run', 'main.py'])
                             st.success("Login successful! Main application launching..")
                         except Exception as e:
                             st.error(f"Error launching main app: {e}")
@@ -124,10 +124,11 @@ def main():
     else:
         st.success("Already authenticated. Main app should be running.")
         # display after successful login
-        st.markdown(
-    '    <meta http-equiv="refresh" content="0; url=https://surbaseai-main.streamlit.app/">',
-            unsafe_allow_html=True
-            )
+       
+        st.link_button(
+            "🚀 Launch SurbaseAI",
+            "https://surbaseai-main.streamlit.app/"
+        )
         #st.markdown("<h1 style='text-align: center; color: white;'>Welcome!</h1>", 
                     #unsafe_allow_html=True)
         #st.markdown("<div style='text-align: center; color: white;'> Youhave succeefully logged in</div>", 
