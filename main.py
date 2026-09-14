@@ -90,9 +90,9 @@ selected_page = st.navigation(
 if st.sidebar.button("logout"):
 
     st.session_state.clear()
-    AUTHENTICATION_ENABLED = False
+    #AUTHENTICATION_ENABLED = False
     try: 
-        if not AUTHENTICATION_ENABLED:
+        #if not AUTHENTICATION_ENABLED:
         #st.switch_page("login_app.py")
             st.link_button(
                 "🚀 Logout SurbaseAI",
