@@ -88,7 +88,7 @@ selected_page = st.navigation(
 )
 if st.sidebar.button("🚪 Logout"): 
     # Clear all session data 
-    st.session_state.clear() 
+    st.session_state.authenticated = True
     # Redirect to SurbaseAI home/login page 
     st.markdown( """ 
     <script> window.top.location.href = "https://surbaseai.streamlit.app/"; </script> 
