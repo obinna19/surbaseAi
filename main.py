@@ -89,8 +89,8 @@ selected_page = st.navigation(
 
 if st.sidebar.button("logout"):
 
-    
-    AUTHENTICATION_ENABLED = True
+    st.session_state.clear()
+    AUTHENTICATION_ENABLED = False
     try: 
         if not AUTHENTICATION_ENABLED:
         #st.switch_page("login_app.py")
@@ -101,7 +101,7 @@ if st.sidebar.button("logout"):
             )
             st.rerun()
     except:
-        st.session_state.clear()
+        pass
      
 
         
