@@ -91,9 +91,9 @@ if st.sidebar.button("logout"):
 
     
     AUTHENTICATION_ENABLED = True
-    00try: 
+    try: 
         if not AUTHENTICATION_ENABLED:
-        st.switch_page("login_app.py")
+        #st.switch_page("login_app.py")
             st.link_button(
                 "🚀 Logout SurbaseAI",
                 "https://surbaseai.streamlit.app/",
