@@ -15,7 +15,7 @@ load_dotenv(override=True)
 
 
 # Configure Gemini API
-genai.configure(api_key=st.secrets["Api_key"])
+genai.configure(api_key=os.getenv("Api_key"))
 
 # Model configuration
 generation_config = {
