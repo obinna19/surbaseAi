@@ -8,9 +8,9 @@ from login_app import *
 
 #st.title("Cybercrime Report Monitor🎡")
 st.set_page_config(
-    page_title= 'SurbaseAi',
-    page_icon= '©',
-    layout= "wide"
+    page_title='SurbaseAi',
+     page_icon='©', 
+     layout="wide"
 )
 #st.logo()
 about_page = st.Page(
@@ -50,7 +50,7 @@ messenger_page = st.Page(
     
 )
 AI_page = st.Page(
-    "./app/chatbot.py", 
+    "./app/chatAi.py", 
     title="AI Assistant", 
     icon="🎯",
     
@@ -83,16 +83,15 @@ selected_page = st.navigation(
         "UI/UX Info": [about_page, Rec_page],
         "Forensic Analysis": [complaint_page, security_page, ip_geolocation, form_page],
         "Inference Tools": [messenger_page, AI_page, CS_page, loc_page]
-    }
     
+    }
 )
 
 if st.sidebar.button("logout"):
 
-    st.session_state.authenticated = False
+    st.session_state.authenticated = True
     try: 
-        st.link_button("Go to Other App", "https://surbaseai.streamlit.app/")
-        #st.switch_page("login_app.py")
+        st.switch_page("login_app.py")
         st.rerun()
     except:
         pass
