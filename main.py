@@ -86,11 +86,12 @@ selected_page = st.navigation(
     
     }
 )
-if st.button("Logout"):
-    st.markdown(
-        '<meta http-equiv="refresh" content="0; url=https://surbaseai.streamlit.app/">',
-        unsafe_allow_html=True
+st.link_button(
+    "🚀 Logout SurbaseAI",
+    "https://surbaseai.streamlit.app/",
+    use_container_width=True
     )
+st.rerun()
 #if st.sidebar.button("logout"):
 
     #st.session_state.authenticated = False 
