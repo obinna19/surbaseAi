@@ -12,6 +12,7 @@ requests
 socket
 threading
 google-generativeai
+google-genai
 python-dotenv
 plotly
 base64
