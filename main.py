@@ -86,27 +86,22 @@ selected_page = st.navigation(
     
     }
 )
-st.link_button(
-    "🚀 Logout SurbaseAI",
-    "https://surbaseai.streamlit.app/",
-    use_container_width=True
-    )
-st.rerun()
-#if st.sidebar.button("logout"):
 
-    #st.session_state.authenticated = False 
-    #AUTHENTICATION_ENABLED = False
-    #try: 
-        #if not AUTHENTICATION_ENABLED:
-        #st.switch_page("login_app.py")
-            #st.link_button(
-                #"🚀 Logout SurbaseAI",
-                #"https://surbaseai.streamlit.app/",
-                #use_container_width=True
-            #)
-            #st.rerun()
-    #except:
-        #pass
+if st.sidebar.button("logout"):
+
+    
+    AUTHENTICATION_ENABLED = True
+    00try: 
+        if not AUTHENTICATION_ENABLED:
+        st.switch_page("login_app.py")
+            st.link_button(
+                "🚀 Logout SurbaseAI",
+                "https://surbaseai.streamlit.app/",
+                use_container_width=True
+            )
+            st.rerun()
+    except:
+        st.session_state.clear()
      
 
         
